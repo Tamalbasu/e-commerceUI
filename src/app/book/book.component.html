@@ -1,0 +1,11 @@
+<div class="card">
+    <div class="card-body">
+            <h5 class="card-title">{{product.bookID}}</h5>
+            <img src="{{product.image}}" class="img-responsive" height="150px"
+                    width="200px" alt="Image">
+            <p class="card-text "> {{product.title}}</p>
+            <p class="card-text "> {{product.price | currency:'INR'}}</p>
+            <p class="card-text "> {{product.authors}}</p>
+            <button class="btn btn-primary" style="text-align: right" (click)="addToCart()">Add to cart</button>
+    </div>
+</div>

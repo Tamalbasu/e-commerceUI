@@ -1,0 +1,17 @@
+<app-navigation [loggedType] = "'customer'"></app-navigation>
+
+<div class="container">
+  <br>
+  <div class="search-products">
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for book">
+  </div>
+  <div class="row">
+  
+    <div class="col-3 align-left" *ngFor="let product of pageOfItems | filter:searchText">
+      <app-book [product]="product" [images] = "images" (productAddToCart)="addToCart($event)">Loading...</app-book>
+    </div>
+  </div>
+  <div class="card-footer pb-0 pt-3">
+    <jw-pagination [items]="products" (changePage)="onChangePage($event)"></jw-pagination>
+</div>
+</div>
